@@ -166,9 +166,11 @@ $cars = $car->getAllCars();
                      echo "<div class='col-lg-4 col-md-6'>
                               <a href='carDetails.php?car=$cr->id'>
                                  <div class='card bg-dark p-0'>
-                                    <img class='card-img' src='admin/app-assets/images/cars/$pic->img' alt='Card image'>
+                                    <img class='card-img' src='admin/app-assets/images/cars/$pic->img' alt='Card image' class='img-fluid'>
                                     <div class='card-img-overlay text-right' style='padding:0;margin: 0px;width: 100%;height: 100%;'>
                                        <h1 class='card-title' style='margin: 0px;'><span class='badge badge-primary'>$cr->price</span></h1>
+                                       <h1 class='card-title' style='margin: 0px;'><span class='badge badge-primary'>$cr->color</span></h1>
+                                       <h1 class='card-title' style='margin: 0px;'><span class='badge badge-primary'>$cr->name</span></h1>
                                     </div>
                                  </div>
                               </a>
