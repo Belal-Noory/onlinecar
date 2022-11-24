@@ -24,6 +24,6 @@ if ($server == "local") {
 
     define('DB_HOST', 'localhost');
     define('DB_USER', 'u500892208_noory');
-    define('DB_PASS', '143Kakawjan@12345?');
+    define('DB_PASS', '143Kakawjan@12345');
     define('DB_NAME', 'u500892208_car');
 }
