@@ -5,6 +5,7 @@ $cars = $car->getAllCars();
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
    <!-- basic -->
    <meta charset="utf-8">
@@ -161,16 +162,14 @@ $cars = $car->getAllCars();
                   $cars_data = $cars->fetchAll(PDO::FETCH_OBJ);
                   $counter = 1;
                   foreach ($cars_data as $cr) {
-                     $car_pic = $car->getCarPics($cr->id);
-                     $pic = $car_pic->fetch(PDO::FETCH_OBJ);
-                     echo "<div class='col-lg-4 col-md-6'>
+                     echo "<div class='col-lg-4 col-md-6 mb-2' style='display: flex;justify-content: center; align-items: center'>
                               <a href='carDetails.php?car=$cr->id'>
-                                 <div class='card bg-dark p-0'>
-                                    <img class='card-img' src='admin/app-assets/images/cars/$pic->img' alt='Card image' class='img-fluid'>
-                                    <div class='card-img-overlay text-right' style='padding:0;margin: 0px;width: 100%;height: 100%;'>
-                                       <h1 class='card-title' style='margin: 0px;'><span class='badge badge-primary'>$cr->price</span></h1>
-                                       <h1 class='card-title' style='margin: 0px;'><span class='badge badge-primary'>$cr->color</span></h1>
-                                       <h1 class='card-title' style='margin: 0px;'><span class='badge badge-primary'>$cr->name</span></h1>
+                                 <div class='card' style='width: 18rem;'>
+                                    <img class='card-img-top' src='admin/app-assets/images/cars/$cr->mainpic' alt='image'>
+                                    <div class='card-body text-right'>
+                                       <p class='card-text'>$cr->model :مودل</p>
+                                       <p class='card-text'>$cr->palet:پلیت</p>
+                                       <p class='card-text'>$cr->price:قیمت</p>
                                     </div>
                                  </div>
                               </a>

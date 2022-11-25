@@ -12,8 +12,23 @@ class Car
 
     public function addCar($params)
     {
-        $query = "INSERT INTO cardetails(name,model,color,catagory,details,price,sold,ownername,ownernumber) VALUES(?,?,?,?,?,?,?,?,?)";
+        $query = "INSERT INTO cardetails(name,model,color,catagory,details,price,sold,ownername,ownernumber,machin,document,girbag,salon,door,mainpic,palet) 
+        VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         $result = $this->conn->Query($query, $params, true);
+        return $result;
+    }
+
+    public function deleteCar($car)
+    {
+        $query = "DELETE FROM cardetails WHERE id = ?";
+        $result = $this->conn->Query($query, [$car]);
+        return $result;
+    }
+
+    public function deleteCarPic($carID)
+    {
+        $query = "DELETE FROM carpic WHERE carID = ?";
+        $result = $this->conn->Query($query, [$carID]);
         return $result;
     }
 

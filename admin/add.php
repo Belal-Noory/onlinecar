@@ -124,38 +124,66 @@ if (!isset($_SESSION["user_online"])) {
                             <form class="form" action="../app//Controllers/car.php" method="POST" enctype="multipart/form-data">
                                 <div class="form-body">
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="projectinput1">Name</label>
                                                 <input type="text" class="form-control" placeholder="Name" name="name" required>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <label>Model</label>
                                                 <input type="text" class="form-control" placeholder="Model" name="model" required>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label>Car Owner</label>
-                                                <input type="text" class="form-control" placeholder="Owner Name" name="owner" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label>Car Owner Phone</label>
-                                                <input type="text" class="form-control" placeholder="Owner Phone" name="phone" required>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label>Color</label>
                                                 <input type="text" class="form-control" placeholder="Color" name="color" required>
                                             </div>
                                         </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Machin</label>
+                                                <input type="text" class="form-control" placeholder="Machin" name="machin" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Documents</label>
+                                                <input type="text" class="form-control" placeholder="Documents" name="docs" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Girbag</label>
+                                                <input type="text" class="form-control" placeholder="Girbag" name="girbag" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Catagory</label>
+                                                <input type="text" class="form-control" placeholder="Catagory" name="cat" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Salon</label>
+                                                <input type="text" class="form-control" placeholder="Salon" name="salon" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Doors</label>
+                                                <input type="text" class="form-control" placeholder="Doors" name="door" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label>Price</label>
@@ -164,18 +192,35 @@ if (!isset($_SESSION["user_online"])) {
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label>Catagory</label>
-                                                <input type="text" class="form-control" placeholder="Catagory" name="cat" required>
+                                                <label>Car Owner</label>
+                                                <input type="text" class="form-control" placeholder="Owner Name" name="owner" required>
                                             </div>
                                         </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Car Owner Phone</label>
+                                                <input type="text" class="form-control" placeholder="Owner Phone" name="phone" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Palet</label>
+                                        <input type="text" class="form-control" placeholder="Palet" name="palet" required>
                                     </div>
                                     <div class="form-group">
                                         <label>Details</label>
                                         <textarea rows="5" class="form-control" name="details" placeholder="Details" required></textarea>
                                     </div>
                                     <div class="form-group">
+                                        <label>Screen Picture</label>
+                                        <label class="file center-block">
+                                            <input type="file" name="mainpic" accept="image/*" required>
+                                            <span class="file-custom"></span>
+                                        </label>
+                                    </div>
+                                    <div class="form-group">
                                         <label>Select Picture</label>
-                                        <label id="projectinput7" class="file center-block">
+                                        <label class="file center-block">
                                             <input type="file" name="file[]" accept="image/*" multiple required>
                                             <span class="file-custom"></span>
                                         </label>
@@ -202,7 +247,7 @@ if (!isset($_SESSION["user_online"])) {
     <!-- BEGIN: Footer-->
     <footer class="footer footer-static footer-light navbar-border navbar-shadow">
         <p class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2">
-            <span class="float-md-left d-block d-md-inline-block">Copyright &copy; 2022 
+            <span class="float-md-left d-block d-md-inline-block">Copyright &copy; 2022
                 <a class="text-bold-800 grey darken-2" href="https://resume-4756a.web.app/" target="_blank">BELAL NOORY</a>
             </span>
         </p>

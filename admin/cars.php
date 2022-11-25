@@ -45,7 +45,16 @@ $cars = $car->getAllCars();
     <!-- BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" href="../../../assets/css/style.css">
     <!-- END: Custom CSS-->
+    <style>
+        .btndelete{
+            cursor: pointer;
+        }
 
+        .btndelete:hover{
+            transform: scale(1.2);
+        }
+
+    </style>
 </head>
 <!-- END: Head-->
 <!-- BEGIN: Body-->
@@ -153,7 +162,7 @@ $cars = $car->getAllCars();
                                                                 <td>$car->price</td>
                                                                 <td>$car->ownername</td>
                                                                 <td>$car->ownernumber</td>
-                                                                <td></td>
+                                                                <td><span class='la la-trash la-2x text-danger btndelete' id='$car->id'></span></td>
                                                             </tr>";
                                                             $counter++;
                                                     }
@@ -206,7 +215,19 @@ $cars = $car->getAllCars();
         <!-- BEGIN: Page JS-->
         <script src="app-assets/js/scripts/pages/dashboard-sales.js"></script>
         <!-- END: Page JS-->
-
+        <script>
+            $(document).ready(function(){
+                $(document).on("click",".btndelete",function(){
+                    $(this).removeClass("la-trash").addClass("la-spinner").addClass("spinner");
+                    ID = $(this).attr("id");
+                    ths = $(this);
+                    $.post("../app/Controllers/car.php",{delete:true,ID:ID},function(data){
+                        $(ths).parent().parent().fadeOut();
+                        console.log(data);
+                    });
+                });
+            });
+        </script>
 </body>
 <!-- END: Body-->
 
