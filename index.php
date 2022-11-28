@@ -34,6 +34,13 @@ $cars = $car->getAllCars();
    <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+   <style>
+      @media screen and (max-width: 575px) {
+         .car {
+            width: 140px;
+         }
+      }
+   </style>
 </head>
 <!-- body -->
 
@@ -72,80 +79,18 @@ $cars = $car->getAllCars();
          <section id="home" class="top_section">
             <div class="row">
                <div class="col-lg-12">
-                  <!-- header -->
-                  <header>
-                     <!-- header inner -->
-                     <div class="container">
-                        <div class="row">
-                           <div class="col-lg-3 logo_section">
-                              <div class="full">
-                                 <div class="center-desk">
-                                    <div class="logo">
-                                       <a href="#"><img src="admin/app-assets/images/logo/logo.png" style="width: 80px" alt="#"></a>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="col-lg-9">
-                              <div class="right_header_info">
-                                 <ul>
-                                    <li>
-                                       <img style="margin-right: 15px;" src="images/phone_icon.png" alt="#" />
-                                       <a href="tel:+93780295949">+93 780 295 949</a>
-                                    </li>
-                                    <li>
-                                       <img style="margin-right: 15px;" src="images/mail_icon.png" alt="#" />
-                                       <a href="mailto:info@motarafg.com">info@motarafg.com</a>
-                                    </li>
-                                    <li>
-                                       <button type="button" id="sidebarCollapse">
-                                          <img src="images/menu_icon.png" alt="#" />
-                                       </button>
-                                    </li>
-                                 </ul>
-                              </div>
-                           </div>
-                        </div>
+                  <!-- header inner -->
+                  <div class="container mt-2">
+                     <div style="display: flex; flex-direction:row;justify-content: space-evenly;align-items: center;flex-wrap: wrap;">
+                        <a href="#"><img src="admin/app-assets/images/logo/logo.png" style="width: 80px" alt="#"></a>
+                        <a href="tel:+93780295949" class="text-white"><i class="fa fa-phone"></i> +93 780 295 949</a>
+                        <a href="mailto:info@motarafg.com" class="text-white"><i class="fa fa-inbox"></i> info@motarafg.com</a>
                      </div>
-                     <!-- end header inner -->
-                  </header>
-                  <section>
-                     <div class="container-fluid">
-                        <div class="row">
-                           <div class="col-md-4">
-                              <div class="full slider_cont_section" style="margin-bottom: 10px;">
-                                 <h4 class="text-center">خوش آمدید به</h4>
-                                 <h3 class="text-center">موتر</h3>
-                                 <p class="text-center">جایکه شما میتوانید موتر دلخواهی تانرا پیدا کنید.</p>
-                                 <div class="d-flex align-items-center justify-content-center">
-                                    <a href="#cars" class="btn btn-warning">برم موتر پیدا کون</a>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="col-md-8">
-                              <div id="slider_main" class="carousel slide" data-ride="carousel">
-                                 <!-- The slideshow -->
-                                 <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                       <img src="images/slider_1.png" alt="#" />
-                                    </div>
-                                    <div class="carousel-item">
-                                       <img src="images/slider_2.png" alt="#" />
-                                    </div>
-                                 </div>
-                                 <div class="full center">
-                                    <a class="carousel-control-prev" href="#slider_main" data-slide="prev">
-                                       <i class="fa fa-angle-right" aria-hidden="true"></i>
-                                    </a>
-                                    <a class="carousel-control-next" href="#slider_main" data-slide="next">
-                                       <i class="fa fa-angle-left" aria-hidden="true"></i>
-                                    </a>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </section>
+                  </div>
+                  <!-- end header inner -->
+                  <div class="container-fluid p-3" style="display: flex;justify-content: center;align-items: center;flex-wrap: wrap;">
+                     <h1 class="text-center text-white main_heading _left_side">خوش آمدید به بازار آنلاین موتر</h1>
+                  </div>
                   <!-- end header -->
                </div>
             </div>
@@ -162,14 +107,14 @@ $cars = $car->getAllCars();
                   $cars_data = $cars->fetchAll(PDO::FETCH_OBJ);
                   $counter = 1;
                   foreach ($cars_data as $cr) {
-                     echo "<div class='col-lg-4 col-md-6 mb-2' style='display: flex;justify-content: center; align-items: center'>
+                     echo "<div class='car col-lg-3 col-md-4 col-sm-6' style='display: flex;justify-content: center; align-items: center'>
                               <a href='carDetails.php?car=$cr->id'>
-                                 <div class='card' style='width: 18rem;'>
-                                    <img class='card-img-top' src='admin/app-assets/images/cars/$cr->mainpic' alt='image'>
-                                    <div class='card-body text-right'>
-                                       <p class='card-text'>$cr->model :مودل</p>
-                                       <p class='card-text'>$cr->palet:پلیت</p>
-                                       <p class='card-text'>$cr->price:قیمت</p>
+                                 <div class='card'>
+                                    <img class='card-img-top img-fluid' src='admin/app-assets/images/cars/$cr->mainpic' alt='image'>
+                                    <div class='card-body text-right bg-primary text-center'>
+                                       <p class='card-text text-white'>$cr->model :مودل</p>
+                                       <p class='card-text text-white'>$cr->palet:پلیت</p>
+                                       <p class='card-text text-white'>$cr->price:قیمت</p>
                                     </div>
                                  </div>
                               </a>
