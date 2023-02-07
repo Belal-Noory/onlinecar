@@ -34,7 +34,7 @@ $cars = $car->getAllCars();
     $car_details = $car_data->fetch(PDO::FETCH_OBJ);
     ?>
 
-    <div class="container pt-4">
+    <div class="container pt-4 mb-3">
         <div class="row">
             <?php
             foreach ($pic as $pics) {
