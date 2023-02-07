@@ -35,9 +35,16 @@ $cars = $car->getAllCars();
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
    <style>
+      .card-img-top{
+            height: 200px;
+         }
       @media screen and (max-width: 575px) {
          .car {
             width: 140px;
+         }
+
+         .card-img-top{
+            height: 100px;
          }
       }
    </style>
@@ -77,44 +84,44 @@ $cars = $car->getAllCars();
       <div id="content">
          <!-- section -->
          <section id="home" class="top_section">
-            <div class="row">
-               <div class="col-lg-12">
-                  <!-- header inner -->
-                  <div class="container mt-2">
-                     <div style="display: flex; flex-direction:row;justify-content: space-evenly;align-items: center;flex-wrap: wrap;">
-                        <a href="#"><img src="admin/app-assets/images/logo/logo.png" style="width: 80px" alt="#"></a>
-                        <a href="tel:+93780295949" class="text-white"><i class="fa fa-phone"></i> +93 780 295 949</a>
-                        <a href="mailto:info@motarafg.com" class="text-white"><i class="fa fa-inbox"></i> info@motarafg.com</a>
-                     </div>
+            <div class="col-lg-12">
+               <!-- header inner -->
+               <div class="container">
+                  <div style="display: flex; flex-direction:row;justify-content: space-evenly;align-items: center;flex-wrap: wrap;">
+                     <a href="#"><img src="admin/app-assets/images/logo/logo.png" style="width: 80px" alt="#"></a>
+                     <a href="tel:+93780295949" class="text-white"><i class="fa fa-phone"></i> +93 780 295 949</a>
+                     <a href="mailto:info@motarafg.com" class="text-white"><i class="fa fa-inbox"></i> info@motarafg.com</a>
                   </div>
-                  <!-- end header inner -->
-                  <div class="container-fluid p-3" style="display: flex;justify-content: center;align-items: center;flex-wrap: wrap;">
-                     <h1 class="text-center text-white main_heading _left_side">خوش آمدید به بازار آنلاین موتر</h1>
-                  </div>
-                  <!-- end header -->
                </div>
+               <!-- end header inner -->
+               <div class="container-fluid" style="display: flex;justify-content: center;align-items: center;flex-wrap: wrap;">
+                  <h1 class="text-center text-white main_heading _left_side">خوش آمدید به بازار آنلاین موتر</h1>
+               </div>
+               <!-- end header -->
             </div>
          </section>
 
          <!-- end section -->
          <section id="cars">
-            <div class="container pt-4">
+            <div class="container">
                <div class="full">
-                  <h3 class="main_heading _left_side margin_top_30 text-center">لیست همه موتر ها</h3>
+                  <h1 class="text-center p-1" style="font-size: 2rem;">لیست همه موتر ها</h1>
                </div>
                <div class="row">
                   <?php
                   $cars_data = $cars->fetchAll(PDO::FETCH_OBJ);
                   $counter = 1;
                   foreach ($cars_data as $cr) {
-                     echo "<div class='car col-lg-3 col-md-4 col-sm-6' style='display: flex;justify-content: center; align-items: center'>
+                     echo "<div class='car col-lg-3 col-md-4 col-sm-6'>
                               <a href='carDetails.php?car=$cr->id'>
                                  <div class='card'>
-                                    <img class='card-img-top img-fluid' src='admin/app-assets/images/cars/$cr->mainpic' alt='image'>
-                                    <div class='card-body text-right bg-primary text-center'>
-                                       <p class='card-text text-white'>$cr->model :مودل</p>
-                                       <p class='card-text text-white'>$cr->palet:پلیت</p>
-                                       <p class='card-text text-white'>$cr->price:قیمت</p>
+                                    <img class='card-img-top img-fluid' src='admin/app-assets/images/cars/$cr->mainpic' alt='im'>
+                                    <div class='card-body text-right text-center p-0' style='background-color: rgba(30, 144, 255, .7);'>
+                                       <div class='row p-1'>
+                                          <p class='card-text text-white col-md-6 col-sm-12'>$cr->model :مودل</p>
+                                          <p class='card-text text-white col-md-6 col-sm-12'>$cr->palet:پلیت</p>
+                                          <p class='card-text text-white col-12 '>$cr->price:قیمت</p>
+                                       </div>
                                     </div>
                                  </div>
                               </a>
