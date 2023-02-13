@@ -90,6 +90,10 @@ $cars = $car->getAllCars();
                     <p class="h5 m-0"><?php echo $car_details->palet ?></p>
                 </div>
                 <div class="col-md-4 col-6 ps-30 my-4">
+                    <p class="text-muted">شماره تماس/واتساپ</p>
+                    <p class="h5 m-0"><a href="tel:0780295949">0780295949</a></p>
+                </div>
+                <div class="col-md-4 col-6 ps-30 my-4">
                     <p class="text-muted">تفصیلات</p>
                     <p class="h5 m-0"><?php echo $car_details->details ?></p>
                 </div>
